@@ -1,6 +1,22 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>Carefree Honey LLC</h1>
+    <p>Local, Raw, Unfiltered</p>
+    <!-- Add logo here  -->
+    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
+
+    <br>
+    <p>
+        Carefree Honey started when Grandpa thought it would be a fun project to keep bees....Shortly after they arrived summer arrived and he return to a colder climate, leaving the bees to Dragan. Since 2012????? Carefree Honey has been bringing local, raw, unfiltered honey to locals at farmers markets in Cave Creek, Carefree, Scottsdale, and Anthem.  
+    </p>
+    <br>
+    <p>In 2018 we started to experiemnt with our honey, adding cinnamon, mint, and other mixins for those who appreciate stronger flavors. </p>
+
+    <!-- TODO Add Photos of starting days -->
+    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
+    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
+    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
+
   </div>
 </template>
 

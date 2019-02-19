@@ -1,6 +1,18 @@
 <template>
     <div>
         <h1>This is our honey page</h1>
+        <h2> Subnavigation </h2>
+        <ul>
+            <li> 
+                Straight from the Hive
+            </li>
+            <li>
+                Speciality Honey
+            </li>
+            <li>
+                Apparel 
+            </li>
+        </ul>
     </div>
 </template>
 

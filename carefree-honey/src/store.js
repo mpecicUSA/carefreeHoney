@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "axios"
+
 
 
 Vue.use(Vuex);
@@ -10,12 +10,17 @@ export default new Vuex.Store({
     products: [],
     reviews: [],
     cart: [],
-    user: {},
-    
+    user: {}
   },
-  mutations: {},
+  mutations: {
+    // used to change state
+  },
   actions: {
-    // Create axions to pull from state
-  
+    // Create async to pull from api
+    fetchProductsData: () => {
+      this.$http.get('http://localhost:8000/products').then(response => {
+          this.products = response.body
+      }).catch(error => console.log(error))
+  }
   }
 });

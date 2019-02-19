@@ -1,7 +1,26 @@
 <template>
     <v-container>
-        Hello, Find Us PAGE
-    </v-container>
+        <h1>Want to try some of our local honey? Come find us at these markets:</h1>
+        <!-- TODO Insert map -->
+        <p> Weekly Markets </p>
+        <!-- TODO add Details of each market  -->
+        <ul> 
+            <li>
+                Cave Creek Farmers Market - DAY of Week - Hours
+                Location
+            </li>
+            <li>
+                Carefree Farmers Market - Thursdays - 3-7 pm 
+                Location
+            </li>
+            <li>
+                Anthem Farmers Market
+            </li>
+            <li>
+                High Street Farmers Market 
+            </li>
+        </ul>
+    </v-container> 
 </template>
 
 <script>

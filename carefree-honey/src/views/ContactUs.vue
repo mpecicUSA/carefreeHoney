@@ -1,5 +1,18 @@
 <template>
+<div>
     <h1>This is the Contact Us Page</h1>
+    <ul> 
+        <li>
+            <a href="mailto:carefreehoney@gmail.com">Carefreehoney@gmail.com</a>
+        </li>
+          <li>
+              Phone: 480-636-9859
+        </li>
+          <li>
+              facebook: <a href="www.facebook.com/carefreehoney" >fb.com/carefreehoney</a>
+        </li>
+    </ul>
+    </div>
 </template>
 
 
