@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>This is our honey page</h1>
+        <img class="ourHoney" src='../assets/stock-photo-honey-style-a-jar-of-natural-honey-and-honey-comb-in-the-pan-on-black-rustic-background-387216472.jpg' alt="Honey on table Fall seasonal theme">
         <h2> Subnavigation </h2>
         <ul>
             <li> 
@@ -39,3 +40,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.ourHoney{
+    width: 100vw;
+    height: 100vh
+
+}
+</style>

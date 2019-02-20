@@ -1,6 +1,5 @@
-
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable('reviews', (table) => {
+    return knex.schema.createTable('purchases',(table)=>{
         table.increments();
         table.integer("product_id")
             .references("id")
@@ -14,11 +13,11 @@ exports.up = function(knex, Promise) {
             .onDelete("CASCADE")
             .notNullable()
             .index();
-        table.text('review')
+        table.integer('quantity')
         table.timestamps(true,true)
     })
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTable('reviews');
+    return knex.schema.dropTable('purchases')
 };

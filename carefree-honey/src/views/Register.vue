@@ -2,14 +2,14 @@
   <v-form v-model="valid">
     <v-container>
 
-        <v-btn @click="submit">Login</v-btn>
+        <v-btn route to="/login">Login</v-btn>
       <v-layout>
         <v-flex
           xs12
           md4
         >
           <v-text-field
-            v-model="firstname"
+            v-model="firstName"
             label="First name"
             required
           ></v-text-field>
@@ -20,8 +20,7 @@
           md4
         >
           <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
+            v-model="lastName"
             label="Last name"
             required
           ></v-text-field>
@@ -33,7 +32,6 @@
         >
           <v-text-field
             v-model="email"
-            :rules="emailRules"
             label="E-mail"
             required
           ></v-text-field>
@@ -44,7 +42,6 @@
         >
           <v-text-field
             v-model="password"
-            :rules="passwordRules"
             type="password"
             label="Password"
             required
@@ -57,34 +54,44 @@
         >
           <v-text-field
             v-model="address"
-            :rules="addressRules"
-            label="Address"
-            required
+            label="Mailing Address"
           ></v-text-field>
         </v-flex>
         <v-btn @click="submit">Register</v-btn>
-        <v-btn @click="clear">Clear</v-btn>
+
     </v-container>
   </v-form>
 </template>
+
 <script>
-
+import axios from "axios"
 export default {
-
-    data: () => ({
-      valid: false,
-      firstname: '',
-      lastname: '',
-      password: '',
-      nameRules: [
-        v => !!v || 'Name is required'
-      ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid'
-      ]
-    })
+    data() {
+      return {
+        firstName: '',
+        lastName: '',
+        password: '',
+        address: ""
+    }
+  },
+  methods: {
+      submit(){
+        console.log("req recieved")
+        axios.post('http://localhost:8000/register', {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          address: this.address
+    }).then( (response) => {
+      console.log(response);
+      this.$router.push('/login')
+    }).catch( (error) => {
+      console.log("this be error:", error);
+})
+      }
+    }
   }
+
 </script>
 

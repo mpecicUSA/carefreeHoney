@@ -33,10 +33,14 @@ module.exports = {
 
     register: (req, res) => {
         hasher.hash(req.body).then((user)=>{
+          console.log("register req  recieved");
             knex('users').insert({
-              userName: user.userName,
+              firstName: user.firstName,
+              lastName: user.lastName,
               email: user.email,
-              password: user.password
+              password: user.password,
+              address: user.address,
+              admin: false
             }, 'id').then((results)=>{
               res.json({message: "Successfully registered, please log in", id:results[0]});
             }).catch((err)=>{

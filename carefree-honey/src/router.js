@@ -9,6 +9,7 @@ import OurHoney from "./views/OurHoney.vue"
 import Login from "./views/Login.vue"
 import Register from "./views/Register.vue"
 import User from "./views/User.vue"
+import Admin from './views/Admin.vue'
 
 
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: User
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
     }
   ]
 });

@@ -3,7 +3,7 @@
     <h1>Carefree Honey LLC</h1>
     <p>Local, Raw, Unfiltered</p>
     <!-- Add logo here  -->
-    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
+    <img class="logo" src="../assets/Carefreehoney logo.jpg" alt="Logo" >
 
     <br>
     <p>
@@ -43,3 +43,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.logo{
+    max-height: 250px;
+    max-width: 250px
+}
+</style>

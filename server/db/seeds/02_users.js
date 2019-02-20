@@ -9,7 +9,9 @@ exports.seed = function(knex, Promise) {
           firstName: 'Marko',
           lastName: "Pecic",
           email: "mpecic@me.com",
-          password: "asdf"
+          password: "asdf",
+          address: "1235 main st, test, test, 12345",
+          admin: true
         }
       ]);
     });

@@ -14,11 +14,14 @@ module.exports = {
     },
     // Add a single user
     addUser: (req,res) => {
+      console.log("server req recieved? ")
       hasher.hash(req.body).then((user)=>{
           knex('users').insert({
-            userName: user.userName,
+            firstName: user.firstName,
+            lastName: user.lastName,
             email: user.email,
-            password: user.password
+            password: user.password,
+            address: user.address
           }, 'id').then((results)=>{
             res.json({message: "Successfully registered, please log in", id:results[0]});
           }).catch((err)=>{
