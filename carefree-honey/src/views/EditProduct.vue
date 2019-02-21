@@ -1,12 +1,12 @@
 <template>
     <v-container>
-            <h3 className=''>Edit Product: {{ productName}}</h3>
+            <h3 className=''>Edit Product: {{ pullProductForEdit.title}}</h3>
             <v-form
             ref="form"
             >
             <v-text-field
-                v-model="title"
-                label="Name of product"
+            label="Title"
+            v-model="title"
             ></v-text-field>
             <v-text-field
             v-model="size"
@@ -30,11 +30,11 @@
             ></v-checkbox>
             <v-text-field
             v-model="imgUrl"
-            label="Image Url"
+            label="Image URL"
             ></v-text-field>
             <v-text-field
             v-model="price"
-            label="price"
+            label="Price"
             ></v-text-field>
             <v-btn 
             color="success"
@@ -49,20 +49,29 @@
 
 <script>
 export default {
-    data(){
+    data:() =>{
+        // const { title, size, details, quantity, onSale, price, freeShipping, imgUrl} = TODO FIND WAY TO PULL THIS DATA 
+        console.log(title);
         return {
-            title: "",
-            size: "",
-            details: "",
-            quantity: "",
-            onSale: false, 
-            price: "",
-            freeShipping: false, 
-            imgUrl: ""
+            title: title | "",
+            size: size | "",
+            details: details | "",
+            quantity: quantity | "",
+            onSale: onSale | "", 
+            price: price | '',
+            freeShipping: freeShipping | "", 
+            imgUrl: imgUrl | ""
         }
     },
-    methods: {
+    methods: { 
+        submit: function(){
 
+        }
+    },
+    computed: {
+        pullProductForEdit () {
+            return this.$store.getters.getSpecificProduct
+        }
     }
 }
 </script>

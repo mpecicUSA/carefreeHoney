@@ -33,17 +33,17 @@ export default new Vuex.Store({
   },
   getters: {
     // used to place information from state into sub components 
-    getProducts(state){
+    getProducts: state => {
       return state.products
     },
-    getCart(state){
+    getCart:state => {
       return state.cart
     },
-    getUser(state){
+    getUser:state => {
       return state.user
+    },
+    getSpecificProduct:state => {
+      return state.products.filter(product => product.id === state.editId)[0]
     }
-    // getSpecificProduct(state){
-    //   return state.products.filter(item => item.id === this.state.editId)
-    // }
   }
 });
