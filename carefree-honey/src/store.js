@@ -51,6 +51,10 @@ export default new Vuex.Store({
     },
     getSpecificProduct:state => {
       return state.products.filter(product => product.id === state.editId)[0]
+    },
+    updateCart: state => {
+      return state.cart.map()
     }
+
   }
 });
