@@ -4,7 +4,7 @@
 
             </v-toolbar-side-icon>  -->
         <!-- TODO if User Screen Small then show toolbar side icon with below items -->
-        <!-- <img class="logo" src="../assets/Carefreehoney logo.jpg" alt="Carefree Honey Logo"> -->
+        <img class="logo" src="../assets/Carefreehoney logo.jpg" alt="Carefree Honey Logo">
         <v-toolbar-title router to="/">Carefree Honey </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">

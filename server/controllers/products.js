@@ -7,9 +7,7 @@ getAll: function(req, res) {
     // res.send("is this working");
     knex("products")
         .then((results)=>{
-            console.log("results obtained");
             res.json(results)
-            console.log("post results");
         })
         .catch((err)=> {
             console.log("this is an error", err)
@@ -17,6 +15,7 @@ getAll: function(req, res) {
 },
     // Add a single product
     addProduct: (req,res) => {
+        console.log('req recieved add product')
         knex('products')
             .insert(req.body)
             .then((products)=> {
@@ -24,9 +23,9 @@ getAll: function(req, res) {
         })
     },
     // Edit a product by id
-    editProduct: (req, res) => {
-        knex('products').update(req.body).where('id', req.params.id).then((results) => {
-            res.send(200)
+    editProduct: (req, response) => {
+        knex('products').update(req.body).where('id', req.params.id).then((response) => {
+            console.log(200);
         })
     },
     // delete a product by id

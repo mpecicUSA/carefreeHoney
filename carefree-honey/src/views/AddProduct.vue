@@ -1,6 +1,6 @@
 <template>
     <v-container>
-            <h3 className=''>Edit Product: {{ pullProductForEdit.title}}</h3>
+            <h3 className=''>Add a new Product</h3>
             <v-form
             ref="form"
             >
@@ -43,12 +43,6 @@
             Submit
             </v-btn>
             </v-form>
-            <v-btn 
-            color="red"
-            @click="del"
-            >
-            Delete this Product from inventory
-            </v-btn>
     </v-container>
 </template>
 
@@ -56,30 +50,29 @@
 import axios from "axios"
 export default {
     data(){
-    const { title, size, details, quantity, onSale, price, freeShipping, imgUrl, id} = this.$store.getters.getSpecificProduct
+
         return {
-            title1: title,
-            size1: size ,
-            details1: details,
-            quantity1: quantity,
-            onSale1: onSale, 
-            price1: price,
-            freeShipping1: freeShipping, 
-            imgUrl1: imgUrl,
-            id1: id
+            title1: "",
+            size1: "" ,
+            details1: '',
+            quantity1: '',
+            onSale1: false, 
+            price1: '',
+            freeShipping1: false, 
+            imgUrl1: ''
         }
     },
     methods: { 
         submit: function(){
                 console.log("button clicked")
-                axios.post(`http://localhost:8000/products/edit/${this.id1}`, {
+                axios.post('http://localhost:8000/products/add', {
                     title: this.title1,
                     size: this.size1, 
                     details: this.details1,
                     quantity: this.quantity1, 
-                    onSale: this.onSale1,
+                    sale: this.onSale1,
                     price: this.price1,
-                    freeShipping: this.freeShipping1,
+                    free_shipping: this.freeShipping1,
                     imgUrl: this.imgUrl1
                 })
                 .then((res)=> {
@@ -87,23 +80,8 @@ export default {
                 })
                 .catch((err) => console.log(err));
                 this.$router.push('/')
-        },
-        del: function(){
-            axios.delete(`http://localhost:8000/products/delete/${this.id1}`)
-            .then((res)=> {
-                console.log(res)
-            })
-            .catch((err)=> {
-                console.log(err)
-            });
-            this.$router.push('/')
         }
     },
-    computed: {
-        pullProductForEdit () {
-            return this.$store.getters.getSpecificProduct
-        }
-    }
 }
 </script>
 

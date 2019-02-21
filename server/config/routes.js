@@ -25,7 +25,7 @@ app.post('/purchases', purchases.addPurchase);
   app.delete('/users/delete/:id', users.deleteUser);
   app.post('/products/add', products.addProduct);
   app.post('/products/edit/:id', products.editProduct);
-  app.delete('products/delete/:id', products.deleteProduct);
+  app.delete('/products/delete/:id', products.deleteProduct);
   //  app.post('/reviews/addReview', reviews.addReview);
   //  app.patch('/reviews/edit/:id', reviews.editReview);
   //  app.delete('/reviews/delete/:id', reviews.deleteReview);

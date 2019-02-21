@@ -5,7 +5,7 @@
             <Cart  />
         </v-layout>
         <v-layout>
-            <v-btn v-show="this.$store.state.user.admin">Add a new item!</v-btn>
+            <v-btn v-show="this.$store.state.user.admin" route to="/products/add">Add a new item!</v-btn>
         </v-layout>
         <!-- <v-layout row wrap> -->
             <SingleProduct v-for="product in products" :key="product.id" :products="product" />             
