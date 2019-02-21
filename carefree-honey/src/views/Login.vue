@@ -37,7 +37,7 @@ import axios from "axios"
                 password:this.password
             })
             .then(res => {
-                this.$store.state.user = {'token': res.data.token,'user_id': res.data.user.id,'firstName': res.data.user.firstName},
+                this.$store.state.user = {'token': res.data.token,'user_id': res.data.user.id,'firstName': res.data.user.firstName, "admin": res.data.user.admin},
                 this.$router.push('/')
             })
             .catch(err => {

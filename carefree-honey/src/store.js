@@ -10,17 +10,21 @@ export default new Vuex.Store({
   state: {
     products: [],
     reviews: [],
-    cart: ["Desert Flower, 16", "Mesquite, 16"],
-    user: []
+    cart: [],
+    user: [],
+    editId: Number,
   },
   mutations: {
-    // used to change state sync
+    // used to change sync state
     set_products(state, products){
       state.products = products
+    },
+    mutateEditId(state, productId){
+      state.editId = productId
     }
   },
   actions: {
-    // Create async to pull from api
+    // Create async to pull from api -- use commit('nameOfMutation, data) to push up to mutations and update state
     fetchProductsData: (context) => {
       axios.get("http://localhost:8000/products")
         .then((resp) => context.commit("set_products",resp.data))
@@ -28,6 +32,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    // used to place information from state into sub components 
     getProducts(state){
       return state.products
     },
@@ -37,5 +42,8 @@ export default new Vuex.Store({
     getUser(state){
       return state.user
     }
+    // getSpecificProduct(state){
+    //   return state.products.filter(item => item.id === this.state.editId)
+    // }
   }
 });

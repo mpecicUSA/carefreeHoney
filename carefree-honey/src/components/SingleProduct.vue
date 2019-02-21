@@ -1,6 +1,6 @@
 <template>
-  <v-layout>
-    <v-flex xs12 sm6 offset-sm3>
+  <v-container >
+    <v-flex xs12 sm8 offset-sm2>
       <v-card>
         <v-img
           :src='products.imgUrl'
@@ -13,15 +13,18 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat @click="addProductToCart(products.id)" color="orange">
+          <v-btn flat @click="addProductToCart" color="orange">
             Add to Cart
           </v-btn>
-          <v-btn v-show="this.$store.state.user.purchases.contains(product.id)" flat @click="addReview(products.id,this.$store.state.user.user_id)" color="orange">Add a review</v-btn>
+          <v-btn v-show="this.$store.state.user.admin" flat @click="edit" color="orange">Edit product</v-btn>
+          <!-- <v-btn flat @click="addReview(products.id,this.$store.state.user.user_id)" color="orange">Add a review</v-btn> -->
         </v-card-actions>
       </v-card>
     </v-flex>
-  </v-layout>
+  </v-container>
 </template>
+
+
 
 <script>
 export default {
@@ -29,6 +32,10 @@ export default {
   methods:{
     addProductToCart(id){
       this.$store.state.cart.push(id);
+    },
+    edit(){
+      this.$store.commit("mutateEditId", this.products.id)
+      this.$router.push(`/edit-product/${this.products.id}`)
     }
   }
 };

@@ -9,6 +9,7 @@ getAll: function(req, res) {
         .then((results)=>{
             console.log("results obtained");
             res.json(results)
+            console.log("post results");
         })
         .catch((err)=> {
             console.log("this is an error", err)

@@ -10,6 +10,7 @@ import Login from "./views/Login.vue"
 import Register from "./views/Register.vue"
 import User from "./views/User.vue"
 import Admin from './views/Admin.vue'
+import EditProduct from "./views/EditProduct.vue"
 
 
 
@@ -62,6 +63,11 @@ export default new Router({
       path: '/admin',
       name: 'admin',
       component: Admin
+    },
+    {
+      path: '/edit-product/:id',
+      name: "edit-product",
+      component: EditProduct
     }
   ]
 });
