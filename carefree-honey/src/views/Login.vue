@@ -38,6 +38,7 @@ import axios from "axios"
             })
             .then(res => {
                 this.$store.state.user = {'token': res.data.token,'user_id': res.data.user.id,'firstName': res.data.user.firstName, "admin": res.data.user.admin},
+                this.$store.state.isLoggedIn = true,
                 this.$router.push('/')
             })
             .catch(err => {

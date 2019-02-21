@@ -1,9 +1,5 @@
 <template>
     <v-container>
-        <!-- add logic to only display if item is in cart -->
-        <v-layout v-show="false">
-            <Cart  />
-        </v-layout>
         <v-layout>
             <v-btn v-show="this.$store.state.user.admin" route to="/products/add">Add a new item!</v-btn>
         </v-layout>
@@ -17,11 +13,9 @@
 
 <script>
 import SingleProduct from "../components/SingleProduct"
-import Cart from "../components/Cart"
 export default {
     components: {
-        SingleProduct,
-        Cart
+        SingleProduct
     },
     data(){
         return { 

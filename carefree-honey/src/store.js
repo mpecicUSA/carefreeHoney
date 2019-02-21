@@ -9,10 +9,17 @@ export default new Vuex.Store({
 
   state: {
     products: [],
-    reviews: [],
-    cart: [],
+    cart: {
+      1:0,
+      2:0,
+      3:0,
+      4:0,
+      5:0,
+      6:0
+    },
     user: [],
     editId: Number,
+    isLoggedIn: false
   },
   mutations: {
     // used to change sync state

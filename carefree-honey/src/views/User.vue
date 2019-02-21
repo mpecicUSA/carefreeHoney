@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>THis is the user data page</h1>
+        <h1>Tis is the user data page</h1>
     </div>
 </template>
 

@@ -12,6 +12,7 @@ import User from "./views/User.vue"
 import Admin from './views/Admin.vue'
 import EditProduct from "./views/EditProduct.vue"
 import AddProduct from './views/AddProduct.vue'
+import Cart from "./views/Cart.vue"
 
 
 
@@ -75,6 +76,11 @@ export default new Router({
       path: '/products/add',
       name: "addproducts",
       component: AddProduct
+    },
+    {
+      path: "/cart",
+      name: 'cart',
+      component: Cart
     }
   ]
 });

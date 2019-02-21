@@ -30,8 +30,8 @@
 export default {
   props:["products"],
   methods:{
-    addProductToCart(id){
-      this.$store.state.cart.push(id);
+    addProductToCart(){
+      this.$store.state.cart[this.products.id]++
     },
     edit(){
       this.$store.commit("mutateEditId", this.products.id)
