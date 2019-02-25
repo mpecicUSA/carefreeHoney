@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <v-container >
     <h1>Carefree Honey LLC</h1>
     <p>Local, Raw, Unfiltered</p>
     <!-- Add logo here  -->
@@ -17,7 +17,7 @@
     <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
     <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
 
-  </div>
+  </v-container>
 </template>
 
 <script>
