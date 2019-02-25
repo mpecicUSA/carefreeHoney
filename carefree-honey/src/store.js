@@ -36,8 +36,8 @@ export default new Vuex.Store({
     getProducts: state => {
       return state.products
     },
-    getCart:state => {
-      return state.cart
+    getCartLength:state => {
+      return state.cart.length
     },
     getUser:state => {
       return state.user
@@ -45,8 +45,12 @@ export default new Vuex.Store({
     getSpecificProduct:state => {
       return state.products.filter(product => product.id === state.editId)[0]
     },
-    updateCart: state => {
-      return state.cart.map()
+    getCart: state => {
+      return state.cart
+    },
+    priceOfCart: state => {
+      let arrOfCart =  state.cart.map(item => item.price);
+      return arrOfCart.reduce((a,b)=> a+b)
     }
 
   }

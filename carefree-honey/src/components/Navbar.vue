@@ -10,7 +10,7 @@
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn router to="/" flat>Shop</v-btn>
             <!-- <v-btn router to="/ourhoney" flat>Our Honey</v-btn> -->
-            <v-btn router to="/cart" flat>Cart ({{ this.$store.getters.getCart.length }})</v-btn>
+            <v-btn router to="/cart" flat>Cart ({{ getCartLength }})</v-btn>
             <!-- <v-btn v-show="this.$store.state.user.user_id" router to="/user" flat>{{this.$store.state.user.firstName}}</v-btn> -->
             <v-btn v-show="!this.$store.state.user.user_id" router to="/login" flat>Login</v-btn>
             <v-btn v-show="this.$store.state.user.admin" router to="/admin" flat>Admin Portal </v-btn>
@@ -31,7 +31,12 @@
                 this.$store.state.user = {},
                 this.$router.push("/login")
             }
+        },
+        computed: {
+        getCartLength () {
+            return this.$store.getters.getCartLength
         }
+    }
     }
 </script>
 

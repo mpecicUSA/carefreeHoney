@@ -32,7 +32,7 @@ export default {
   
   methods:{
     addProductToCart(){
-      this.$store.state.cart.push(this.products.id);
+      this.$store.state.cart.push(this.products);
     },
     edit(){
       this.$store.commit("mutateEditId", this.products.id)
