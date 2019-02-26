@@ -1,17 +1,20 @@
 <template>
     <v-container>
         <v-layout>
-        <v-flex xs6 >
-
+        <v-flex align-center xs12>
+            <h1> Weekly Markets </h1>
+        </v-flex>
+        </v-layout>
+        <v-layout>
+        <v-flex xs12 >
         <v-img
         src="https://c8.alamy.com/comp/F2G2ET/zagreb-croatia-honey-for-sale-on-dolac-farmers-market-F2G2ET.jpg"
         >
         </v-img>
         </v-flex>
-        <v-flex xs6 class="right">
-
-
-        <h3> Weekly Markets </h3>
+        </v-layout>
+        <v-layout>
+        <v-flex xs12 >
 
         <ul> 
             <li>
@@ -60,8 +63,6 @@ export default {
 </script>
 
 <style scoped>
-.right li{
-    font-size: 15px;
-}
+
 </style>
 
