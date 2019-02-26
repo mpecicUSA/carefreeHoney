@@ -56,7 +56,7 @@ export default {
         let arrOfIds = this.$store.state.cart.map(product => product.id);
           this.products.inCart++;
         if(arrOfIds.includes(this.products.id)){
-          this.$store.state.cart.map(product => product.inCart = this.products.inCart)
+          this.$store.state.cart.map(product => product.id === this.products.id ? inCart = this.products.inCart : null)
         } else {
           this.$store.state.cart.push(this.products)
         }

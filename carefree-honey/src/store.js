@@ -23,7 +23,11 @@ export default new Vuex.Store({
       state.editId = productId
     },
     removeFromCart(state, id){
-      state.cart = state.cart.filter(item => item.id !== id)
+      for(let i=0; i>state.cart.length; i++){
+        if(state.cart[i].id === id){
+          state.cart[i].inCart = state.cart[i].inCart--
+        }
+      }
     }
   },
   actions: {
@@ -56,7 +60,7 @@ export default new Vuex.Store({
       return state.cart
     },
     priceOfCart: state => {
-      let arrOfCart =  state.cart.map(item => item.price);
+      let arrOfCart =  state.cart.map(item => item.inCart > 0 ? (item.price*item.inCart) : false);
       return arrOfCart.reduce((a,b)=> a+b)
     }
 

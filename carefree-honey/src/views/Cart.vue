@@ -6,7 +6,7 @@
             <h1 v-else>Welcome Guest!</h1>
             <p> You have {{ getCartLength }} items in your cart</p>
         </v-flex>
-        <v-flex xs-4>
+        <v-flex xs-4 >
             Total: ${{ price }}
             <v-btn raised color="orange" @click="checkout"> Checkout</v-btn>
             <v-alert
@@ -21,7 +21,7 @@
     <v-layout>
         <v-flex xs12 sm8 offset-sm2 >
             <v-flex v-for="item in cartItems" :key="item.id" mb-3>
-                <v-card>
+                <v-card v-show="item.inCart>0">
                 <v-img
                 :src='item.imgUrl'
                 aspect-ratio="2.75"
@@ -35,12 +35,10 @@
                         <div>
                         {{item.details}}
                         </div>
-                        <div>
-                            Quantity: {{item.inCart}}
-                        </div>
+
                     </v-card-text>
                     <v-card-actions>
-                    ${{item.price}}
+                    Quantity: {{item.inCart}} X ${{item.price}} 
                     <v-spacer/>
                         <v-btn :value="item.id" raised @click="removeFromCart" color="error">
                         Remove from Cart
@@ -69,13 +67,17 @@ computed: {
             return this.$store.getters.getCart
         }, 
         price () {
-            return this.$store.getters.priceOfCart
+            if(this.$store.getters.priceOfCart){
+                return this.$store.getters.priceOfCart
+            }else{
+                return 0
+            }
         }
     },
     methods: {
         removeFromCart(e) {
-            console.log(e.target.value)
-            // this.$store.commit("removeFromCart",e.target.value)
+            // console.log(e.target.value)
+            this.$store.state.cart.map(product => product.id === Number(e.target.value) ? product.inCart-- : null)
         },
         checkout(){
             this.clicked = !this.clicked;
