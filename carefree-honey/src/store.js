@@ -40,7 +40,11 @@ export default new Vuex.Store({
       return state.products
     },
     getCartLength:state => {
-      return state.cart.length
+      if(state.cart.length < 1){
+        return 0
+      }else {
+        return state.cart.map(item => item.inCart).reduce((a,b) => a+b)
+      }
     },
     getUser:state => {
       return state.user

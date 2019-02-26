@@ -35,6 +35,9 @@
                         <div>
                         {{item.details}}
                         </div>
+                        <div>
+                            Quantity: {{item.inCart}}
+                        </div>
                     </v-card-text>
                     <v-card-actions>
                     ${{item.price}}
