@@ -8,7 +8,7 @@
         </v-flex>
         <v-flex xs-4>
             Total: ${{ price }}
-            <v-btn raised color="success" @click="checkout"> Checkout</v-btn>
+            <v-btn raised color="orange" @click="checkout"> Checkout</v-btn>
             <v-alert
                 :value="clicked"
                 type="info"
@@ -19,12 +19,12 @@
     </v-layout>
 
     <v-layout>
-        <v-flex align-center justify-center row >
+        <v-flex xs12 sm8 offset-sm2 >
             <v-flex v-for="item in cartItems" :key="item.id" mb-3>
                 <v-card>
                 <v-img
                 :src='item.imgUrl'
-                :aspect-ratio="7"
+                aspect-ratio="2.75"
                 ></v-img>
                 <v-card-title primary-title>
                     <div>
@@ -36,11 +36,13 @@
                         {{item.details}}
                         </div>
                     </v-card-text>
-                    <!-- <v-card-actions>
+                    <v-card-actions>
+                    ${{item.price}}
+                    <v-spacer/>
                         <v-btn :value="item.id" raised @click="removeFromCart" color="error">
                         Remove from Cart
                         </v-btn>
-                    </v-card-actions> -->
+                    </v-card-actions>
                 </v-card>
             </v-flex>
         </v-flex>

@@ -13,6 +13,7 @@ exports.seed = function(knex, Promise) {
           price: 12,
           sale: false,
           free_shipping: false,
+          inCart: 0,
           imgUrl: "http://st.depositphotos.com/1017651/3251/i/950/depositphotos_32511413-Glass-jar-of-honey.jpg"
         }, {
           title: 'Desert Flower Honey', 
@@ -22,6 +23,7 @@ exports.seed = function(knex, Promise) {
           price: 20,
           sale: false,
           free_shipping: false,
+          inCart: 0,
           imgUrl: "https://static8.depositphotos.com/1003821/904/i/950/depositphotos_9041408-stock-photo-jar-of-honey.jpg"
         }, {
           title: 'Mesquite Honey', 
@@ -31,6 +33,7 @@ exports.seed = function(knex, Promise) {
           price: 12,
           sale: false,
           free_shipping: false,
+          inCart: 0,
           imgUrl: "http://st.depositphotos.com/1017651/3251/i/950/depositphotos_32511413-Glass-jar-of-honey.jpg"
 
         },
@@ -42,6 +45,7 @@ exports.seed = function(knex, Promise) {
           price: 20,
           sale: false,
           free_shipping: false,
+          inCart: 0,
           imgUrl: "https://static8.depositphotos.com/1003821/904/i/950/depositphotos_9041408-stock-photo-jar-of-honey.jpg"
 
         },{
@@ -52,6 +56,7 @@ exports.seed = function(knex, Promise) {
           price: 12,
           sale: false,
           free_shipping: false,
+          inCart: 0,
           imgUrl: "http://st.depositphotos.com/1017651/3251/i/950/depositphotos_32511413-Glass-jar-of-honey.jpg"
 
         },{
@@ -62,6 +67,7 @@ exports.seed = function(knex, Promise) {
           price: 20,
           sale: false,
           free_shipping: false,
+          inCart: 0,
           imgUrl: "https://static8.depositphotos.com/1003821/904/i/950/depositphotos_9041408-stock-photo-jar-of-honey.jpg"
 
         }

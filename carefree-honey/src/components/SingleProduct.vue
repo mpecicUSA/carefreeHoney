@@ -19,8 +19,10 @@
           >
           {{products.title}} has been added to cart
           </v-alert>
-        <v-card-actions>
-          <v-btn  @click="addProductToCart" color="orange">
+        <v-card-actions >
+          ${{products.price}}
+          <v-spacer/>
+          <v-btn center @click="addProductToCart" color="orange">
             Add to Cart
           </v-btn>
         

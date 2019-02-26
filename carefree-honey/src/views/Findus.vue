@@ -1,25 +1,37 @@
 <template>
     <v-container>
-        <h1>Want to try some of our local honey? Come find us at these markets:</h1>
-        <!-- TODO Insert map -->
+        <v-layout>
+        <v-flex xs6 >
+
+        <v-img
+        src="https://c8.alamy.com/comp/F2G2ET/zagreb-croatia-honey-for-sale-on-dolac-farmers-market-F2G2ET.jpg"
+        >
+        </v-img>
+        </v-flex>
+        <v-flex xs6 align-content-center >
+
+
         <p> Weekly Markets </p>
-        <!-- TODO add Details of each market  -->
+
         <ul> 
             <li>
-                Cave Creek Farmers Market - DAY of Week - Hours
-                Location
-            </li>
-            <li>
                 Carefree Farmers Market - Thursdays - 3-7 pm 
-                Location
             </li>
             <li>
-                Anthem Farmers Market
+                Cave Creek Farmers Market - Fridays - 9am to 1pm 
             </li>
             <li>
-                High Street Farmers Market 
+                Farmers Market North Scottsdale - Saturdays - 9am to 1pm 
+            </li>
+            <li>
+                Anthem Farmers Market - Sunday - 9am -1pm 
+            </li>
+            <li>
+                High Street Farmers Market - Sunday - 10am to 1pm 
             </li>
         </ul>
+        </v-flex>
+        </v-layout>
     </v-container> 
 </template>
 
