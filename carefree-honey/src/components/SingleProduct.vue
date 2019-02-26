@@ -10,13 +10,21 @@
           <div>
             <h3 class="headline mb-0">{{ products.title}} -- {{products.size}}</h3>
             <div>{{products.details}}</div>
+            
           </div>
         </v-card-title>
+          <v-alert
+          :value="clicked"
+          type="success"
+          >
+          {{products.title}} has been added to cart
+          </v-alert>
         <v-card-actions>
-          <v-btn flat @click="addProductToCart" color="orange">
+          <v-btn  @click="addProductToCart" color="orange">
             Add to Cart
           </v-btn>
-          <v-btn v-show="this.$store.state.user.admin" flat @click="edit" color="orange">Edit product</v-btn>
+        
+          <v-btn v-show="this.$store.state.user.admin"  @click="edit" color="orange">Edit product</v-btn>
           <!-- <v-btn flat @click="addReview(products.id,this.$store.state.user.user_id)" color="orange">Add a review</v-btn> -->
         </v-card-actions>
       </v-card>
@@ -29,10 +37,18 @@
 <script>
 export default {
   props:["products"],
-  
+  data() {
+    return {
+      clicked: false
+    }
+  },
   methods:{
     addProductToCart(){
-      this.$store.state.cart.push(this.products);
+        this.clicked = !this.clicked;
+            setTimeout(() => {
+                this.clicked = !this.clicked; 
+            }, 2000)
+        this.$store.state.cart.push(this.products)
     },
     edit(){
       this.$store.commit("mutateEditId", this.products.id)

@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar fixed="true">
+    <v-toolbar fixed>
         <!-- <v-toolbar-side-icon>
 
             </v-toolbar-side-icon>  -->
@@ -23,7 +23,7 @@
     export default {
         data() {
             return {
-                // TODO Import token here to autorender navbar correclty based on login
+
             }
         },
         methods: {

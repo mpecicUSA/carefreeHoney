@@ -21,13 +21,16 @@ export default new Vuex.Store({
     },
     mutateEditId(state, productId){
       state.editId = productId
+    },
+    removeFromCart(state, id){
+      state.cart = state.cart.filter(item => item.id !== id)
     }
   },
   actions: {
     // Create async to pull from api -- use commit('nameOfMutation, data) to push up to mutations and update state
     fetchProductsData: (context) => {
       axios.get("http://localhost:8000/products")
-        .then((resp) => context.commit("set_products",resp.data))
+        .then((resp) => context.commit("set_products", resp.data))
         .catch((err) => console.log(err))
     }
   },
