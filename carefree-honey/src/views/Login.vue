@@ -1,7 +1,6 @@
 <template>
     <v-container>
     <form>
-        <v-btn route to="/register">Register</v-btn>
         <v-text-field
         v-model="email"
         label="E-mail"
@@ -13,8 +12,17 @@
         type="password"
         required
         ></v-text-field>
-        <v-btn @click="submit">Submit</v-btn>
-        <v-btn @click="clear">Clear</v-btn>
+        <v-layout>
+            <v-flex xs6>
+            <v-btn route to="/register">Register</v-btn>
+            </v-flex>
+            <v-flex xs6>
+            <v-spacer></v-spacer>
+            <v-btn color="orange" @click="submit">Submit</v-btn>
+            <v-btn color="error" @click="clear">Clear</v-btn>
+
+            </v-flex>
+        </v-layout>
     </form>
     </v-container>
 </template>

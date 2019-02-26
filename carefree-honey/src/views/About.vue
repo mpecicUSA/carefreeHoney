@@ -1,23 +1,29 @@
 <template>
-  <v-container >
-    <h1>Carefree Honey LLC</h1>
-    <p>Local, Raw, Unfiltered</p>
-    <!-- Add logo here  -->
-    <img class="logo" src="../assets/Carefreehoney logo.jpg" alt="Logo" >
+    <v-container>
+        <v-layout align-center justify-center fill-height >
+            <v-flex xs6 >
+            <h1>Carefree Honey LLC</h1>
+            <p>Local, Raw, Unfiltered</p>
+            </v-flex>
+            <v-flex xs6 align-center justify-center>
+                <img class="logo" src="../assets/Carefreehoney logo.jpg" alt="Logo" >
+            </v-flex>
+        </v-layout>
+        <v-layout>
+            <v-flex>
 
-    <br>
-    <p>
-        Carefree Honey started when Grandpa thought it would be a fun project to keep bees....Shortly after they arrived summer arrived and he return to a colder climate, leaving the bees to Dragan. Since 2012????? Carefree Honey has been bringing local, raw, unfiltered honey to locals at farmers markets in Cave Creek, Carefree, Scottsdale, and Anthem.  
-    </p>
-    <br>
-    <p>In 2018 we started to experiemnt with our honey, adding cinnamon, mint, and other mixins for those who appreciate stronger flavors. </p>
-
-    <!-- TODO Add Photos of starting days -->
-    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
-    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
-    <img src="https://via.placeholder.com/250x250" alt="Placeholder" >
-
-  </v-container>
+        <p>
+            Since 2012 Carefree Honey has been bringing local, raw, unfiltered honey to locals at farmers markets in Cave Creek, Carefree, Scottsdale, and Anthem.  
+        </p>
+        <br>
+        <p>In 2018 we started to experiemnt with our honey, adding cinnamon, mint, and other mixins for those who appreciate stronger flavors.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates ut aut natus, nam dolorum ipsum illo numquam a non sunt asperiores totam delectus laudantium reiciendis quibusdam quia veritatis esse consectetur!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta ullam optio, nisi ut delectus unde ratione vitae illum amet atque dolore sed molestiae repellendus quos, eveniet, autem doloremque? Doloremque, commodi?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reprehenderit corrupti incidunt ex quam sed, at ducimus nisi nesciunt? Iusto dignissimos magni iure fugit voluptatem repellat expedita est fugiat aut.
+        </p>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>

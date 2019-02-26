@@ -8,10 +8,10 @@
         >
         </v-img>
         </v-flex>
-        <v-flex xs6 align-content-center >
+        <v-flex xs6 class="right">
 
 
-        <p> Weekly Markets </p>
+        <h3> Weekly Markets </h3>
 
         <ul> 
             <li>
@@ -58,3 +58,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.right li{
+    font-size: 15px;
+}
+</style>
+
