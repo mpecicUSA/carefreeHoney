@@ -23,10 +23,26 @@ export default new Vuex.Store({
       state.editId = productId
     },
     removeFromCart(state, id){
-      for(let i=0; i>state.cart.length; i++){
-        if(state.cart[i].id === id){
-          state.cart[i].inCart = state.cart[i].inCart--
+      for(let i=0; i<state.cart.length; i++){
+        if(Number(state.cart[i].id) === Number(id)){
+          state.cart[i].inCart-=1
         }
+      }
+    },
+    addToCart(state,product){
+      // is the item already in the cart ? 
+      if(state.cart.map(item => Number(item.id)).includes(Number(product.id))){
+        // item is in cart / increase that specific item's inCart quantity by 1
+        for(let i=0; i<state.cart.length; i++){
+          if(Number(state.cart[i].id) === Number(product.id)){
+            state.cart[i].inCart+=1
+          }
+        }
+
+      }else{
+        // item is not in cart, set inCart to 1, push into cart array. 
+        product.inCart = 1; 
+        state.cart.push(product);
       }
     }
   },

@@ -48,18 +48,20 @@ export default {
     }
   },
   methods:{
-    addProductToCart(e){
+    addProductToCart(){
         this.clicked = true;
             setTimeout(() => {
                 this.clicked = false; 
             }, 3000)
-        let arrOfIds = this.$store.state.cart.map(product => product.id);
-          this.products.inCart++;
-        if(arrOfIds.includes(this.products.id)){
-          this.$store.state.cart.map(product => product.id === this.products.id ? inCart = this.products.inCart : null)
-        } else {
-          this.$store.state.cart.push(this.products)
-        }
+        this.$store.commit('addToCart', this.products);
+
+        // let arrOfIds = this.$store.state.cart.map(product => product.id);
+        //   this.products.inCart++;
+        // if(arrOfIds.includes(this.products.id)){
+        //   this.$store.state.cart.map(product => product.id === this.products.id ? inCart = this.products.inCart : null)
+        // } else {
+        //   this.$store.state.cart.push(this.products)
+        // }
     },
     edit(){
       this.$store.commit("mutateEditId", this.products.id)
