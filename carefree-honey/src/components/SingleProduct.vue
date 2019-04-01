@@ -52,7 +52,7 @@ export default {
         this.clicked = true;
             setTimeout(() => {
                 this.clicked = false; 
-            }, 3000)
+            }, 800)
         this.$store.commit('addToCart', this.products);
 
         // let arrOfIds = this.$store.state.cart.map(product => product.id);

@@ -1,13 +1,34 @@
 <template>
-    <v-container>
-        <v-layout>
+    <!-- largest container -->
+    <v-container> 
+        <!-- top row -->
+        <v-layout row>
             <v-btn v-show="this.$store.state.user.admin" route to="/products/add">Add a new item!</v-btn>
         </v-layout>
-        <!-- <v-layout row wrap> -->
-            <SingleProduct v-for="product in products" :key="product.id" :products="product" />             
-        <!-- </v-layout> -->
-    </v-container>
+        <!-- aside -->
+        <v-layout justify-space-around row fill-height >
+            <v-flex row xs3> 
+                <p>Filter: </p>
+            <v-switch
+                v-model="infused"
+                label="Infused"
+                color="orange"
+                >
+            </v-switch>
+            <v-switch
+                v-model="raw"
+                label="Raw"
+                color="orange"
+                >Straight
+            </v-switch>
 
+            </v-flex>
+            <!-- main content  -->
+            <v-flex xs9 row wrap>
+                <SingleProduct v-for="product in products" :key="product.id" :products="product" />  
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template> 
 
 
@@ -21,6 +42,8 @@ export default {
         return { 
             // useful for data binding in forms most commonly used as a local state,
             // also useful with v-model in form inputs
+            raw: true, 
+            infused: true
         }
     }, 
     created() {

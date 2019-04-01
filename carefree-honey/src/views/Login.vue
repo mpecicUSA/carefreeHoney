@@ -18,9 +18,8 @@
             </v-flex>
             <v-flex xs6>
             <v-spacer></v-spacer>
-            <v-btn color="orange" @click="submit">Submit</v-btn>
-            <v-btn color="error" @click="clear">Clear</v-btn>
-
+            <v-btn color="orange" @click="submit" >Submit</v-btn>
+            <v-btn color="error" @click="clear" >Clear</v-btn>
             </v-flex>
         </v-layout>
     </form>

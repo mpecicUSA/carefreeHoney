@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
         table.string('details');
         table.integer('price');
         table.boolean('sale');
+        table.boolean('infused');
         table.boolean('free_shipping');
         table.text('imgUrl');
         table.integer('inCart')

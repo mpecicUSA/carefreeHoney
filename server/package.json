@@ -18,5 +18,8 @@
     "pg": "^7.3.0",
     "request": "^2.88.0",
     "stripe": "^6.25.1"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0"
   }
 }
