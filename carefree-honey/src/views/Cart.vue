@@ -76,7 +76,7 @@ computed: {
     },
     methods: {
         removeFromCart(e) {
-            this.$store.commit('removeFromCart', e.target.value);
+            this.$store.state.cart.map(product => product.id === Number(e.target.parentNode.value) ? product.inCart-- : null)
         },
         checkout(){
             this.clicked = !this.clicked;
