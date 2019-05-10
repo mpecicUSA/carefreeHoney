@@ -11,6 +11,7 @@
             <v-btn router to="/" flat>Shop</v-btn>
             <!-- <v-btn router to="/ourhoney" flat>Our Honey</v-btn> -->
             <v-btn v-show="getCartLength>0" router to="/cart" flat>Cart ({{ getCartLength }})</v-btn>
+            <v-btn v-show="getCartLength<1" router to="/cart" flat>Cart</v-btn>
             <!-- <v-btn v-show="this.$store.state.user.user_id" router to="/user" flat>{{this.$store.state.user.firstName}}</v-btn> -->
             <v-btn v-show="!this.$store.state.user.user_id" router to="/login" flat>Login</v-btn>
             <v-btn v-show="this.$store.state.user.admin" router to="/admin" flat>Admin Portal </v-btn>
