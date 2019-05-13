@@ -4,7 +4,12 @@
         <v-flex xs8>
             <h1 v-if="this.$store.state.isLoggedIn"> Welcome {{this.$store.state.user.firstName}}</h1>
             <h1 v-else>Welcome Guest!</h1>
-            <p> You have {{ getCartLength }} items in your cart</p>
+            <p v-if="getCartLength<1">
+                You have no items in your cart! Check out the shop tab to browse our honey selection.
+            </p>
+            <p v-else>
+                You have {{ getCartLength }} items in your cart
+            </p>
         </v-flex>
         <v-flex xs-4 >
             Total: ${{ price }}

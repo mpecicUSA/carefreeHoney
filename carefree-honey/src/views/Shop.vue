@@ -9,23 +9,26 @@
         <v-layout justify-space-around row fill-height >
             <v-flex row xs3> 
                 <p>Filter: </p>
+
+            <v-switch
+                v-model="raw"
+                label="Raw"
+                color="orange"
+                @click="rawFilter"
+                >
+            </v-switch>
             <v-switch
                 v-model="infused"
                 label="Infused"
                 color="orange"
                 >
             </v-switch>
-            <v-switch
-                v-model="raw"
-                label="Raw"
-                color="orange"
-                >Straight
-            </v-switch>
+            
 
             </v-flex>
             <!-- main content  -->
             <v-flex xs9 row wrap>
-                <SingleProduct v-for="product in products" :key="product.id" :products="product" />  
+                <SingleProduct v-for="product in products" :key="product.id" :products="product" /> 
             </v-flex>
         </v-layout>
     </v-container>
@@ -42,7 +45,7 @@ export default {
         return { 
             // useful for data binding in forms most commonly used as a local state,
             // also useful with v-model in form inputs
-            raw: true, 
+            raw: true,
             infused: true
         }
     }, 
@@ -60,15 +63,18 @@ export default {
         }
     },
     methods: {
+        rawFilter: function(){
+            console.log("Raw was hit!");
+        }
         // this is a static method you have exectute example submit on form 
         // these methods are executed via an event
         // use for event handling
     },
     computed: {
         // these are bound to store, recalced any time you change the corresponding store value
-        // these values are good for data binding, for example, iterating over a lsit of values
+        // these values are good for data binding, for example, iterating over a list of values
         products() {
-            return this.$store.getters.getProducts
+                return this.$store.getters.getProducts
         },
         getCart(){
             return this.$store.getters.getCart

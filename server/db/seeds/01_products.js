@@ -5,6 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('products').insert([
+        //Raw honey 
         {
           title: 'Desert Flower Honey', 
           size: "12oz", 
@@ -75,7 +76,9 @@ exports.seed = function(knex, Promise) {
           inCart: 0,
           infused: false,
           imgUrl: "https://static8.depositphotos.com/1003821/904/i/950/depositphotos_9041408-stock-photo-jar-of-honey.jpg"
-        },{
+        },
+        // Infused Honey
+        {
           title: 'Whipped Honey', 
           size: "12oz", 
           quantity: 25, 
@@ -86,8 +89,18 @@ exports.seed = function(knex, Promise) {
           inCart: 0,
           infused: true,
           imgUrl: "https://static8.depositphotos.com/1003821/904/i/950/depositphotos_9041408-stock-photo-jar-of-honey.jpg"
-        },
-
+        },{
+          title: 'Cinnamon Honey', 
+          size: "12oz", 
+          quantity: 25, 
+          details:"Looking for Christmas in a spoon? Be sure to try one of our favorite infused honeys! ",
+          price: 15,
+          sale: false,
+          free_shipping: false,
+          inCart: 0,
+          infused: true,
+          imgUrl: "https://static8.depositphotos.com/1003821/904/i/950/depositphotos_9041408-stock-photo-jar-of-honey.jpg"
+        }
       ]);
     });
 };
