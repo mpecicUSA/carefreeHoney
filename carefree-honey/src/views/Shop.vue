@@ -10,18 +10,18 @@
             <v-flex row xs3> 
                 <p>Filter: </p>
 
-            <v-checkbox
+            <v-switch
                 v-model="raw"
                 label="Raw"
                 color="orange"
                 >
-            </v-checkbox>
-            <v-checkbox
+            </v-switch>
+            <v-switch
                 v-model="infused"
                 label="Infused"
                 color="orange"
                 >
-            </v-checkbox>
+            </v-switch>
             
 
             </v-flex>
