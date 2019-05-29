@@ -76,8 +76,17 @@ export default new Vuex.Store({
       return state.cart
     },
     priceOfCart: state => {
-      let arrOfCart =  state.cart.map(item => item.inCart > 0 ? (item.price*item.inCart) : false);
-      return arrOfCart.reduce((a,b)=> a+b)
+      let arrOfCart =  [];
+      for(let i=0; i<state.cart.length; i++){
+        if(state.cart[i].inCart>0){
+          arrOfCart.push(state.cart[i].price*state.cart[i].inCart)
+        }
+      }
+      if(arrOfCart >0){
+        return arrOfCart.reduce((a,b)=> a+b)
+      } else {
+        return 0
+      }
     }
 
   }
