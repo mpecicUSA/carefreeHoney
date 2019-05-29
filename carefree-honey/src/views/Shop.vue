@@ -78,13 +78,12 @@ export default {
         },
         getFiltered(){
             if(this.raw === true && this.infused === true){
-                console.log(this.$store.getters.getProducts)
                 return this.$store.getters.getProducts
             } else if(this.raw === true){
                 return this.$store.getters.getProducts.filter(item => item.infused === false)
             } else if(this.infused === true){
                 return this.$store.getters.getProducts.filter(item => item.infused === true)
-            } else{
+            } else {
                 return []; 
             }
         }
