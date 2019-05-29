@@ -10,25 +10,24 @@
             <v-flex row xs3> 
                 <p>Filter: </p>
 
-            <v-switch
+            <v-checkbox
                 v-model="raw"
                 label="Raw"
                 color="orange"
-                @click="rawFilter"
                 >
-            </v-switch>
-            <v-switch
+            </v-checkbox>
+            <v-checkbox
                 v-model="infused"
                 label="Infused"
                 color="orange"
                 >
-            </v-switch>
+            </v-checkbox>
             
 
             </v-flex>
             <!-- main content  -->
-            <v-flex xs9 row wrap>
-                <SingleProduct v-for="product in products" :key="product.id" :products="product" /> 
+            <v-flex  xs9 row wrap>
+                <SingleProduct  v-for="product in getFiltered" :key="product.id" :products="product" :class="product.infused" /> 
             </v-flex>
         </v-layout>
     </v-container>
@@ -63,9 +62,7 @@ export default {
         }
     },
     methods: {
-        rawFilter: function(){
-            console.log("Raw was hit!");
-        }
+        
         // this is a static method you have exectute example submit on form 
         // these methods are executed via an event
         // use for event handling
@@ -78,6 +75,18 @@ export default {
         },
         getCart(){
             return this.$store.getters.getCart
+        },
+        getFiltered(){
+            if(this.raw === true && this.infused === true){
+                console.log(this.$store.getters.getProducts)
+                return this.$store.getters.getProducts
+            } else if(this.raw === true){
+                return this.$store.getters.getProducts.filter(item => item.infused === false)
+            } else if(this.infused === true){
+                return this.$store.getters.getProducts.filter(item => item.infused === true)
+            } else{
+                return []; 
+            }
         }
     }
 }
