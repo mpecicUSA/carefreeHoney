@@ -82,7 +82,7 @@ export default new Vuex.Store({
           arrOfCart.push(state.cart[i].price*state.cart[i].inCart)
         }
       }
-      if(arrOfCart >0){
+      if(arrOfCart.length>0){
         return arrOfCart.reduce((a,b)=> a+b)
       } else {
         return 0
