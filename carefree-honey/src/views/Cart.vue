@@ -2,18 +2,18 @@
 <v-container>
     <v-layout>
         <v-flex xs8>
-            <h1 v-if="this.$store.state.isLoggedIn"> Welcome {{this.$store.state.user.firstName}}</h1>
-            <h1 v-else>Welcome Guest!</h1>
-            <p v-if="getCartLength<1">
+            <h1 v-show="this.$store.state.isLoggedIn"> Welcome {{this.$store.state.user.firstName}}</h1>
+            <h1 v-show="!this.$store.state.isLoggedIn">Welcome Guest!</h1>
+            <p v-show="getCartLength<1">
                 You have no items in your cart! Check out the shop tab to browse our honey selection.
             </p>
-            <p v-else>
+            <p v-show="getCartLength>1">
                 You have {{ getCartLength }} items in your cart
             </p>
         </v-flex>
         <v-flex xs-4 >
             Total: ${{ price }}
-            <v-btn raised color="orange" @click="checkout"> Checkout</v-btn>
+            <v-btn raised color="orange" @click="checkout">Checkout</v-btn>
             <v-alert
                 :value="clicked"
                 type="info"
@@ -72,11 +72,8 @@ computed: {
             return this.$store.getters.getCart
         }, 
         price () {
-            if(this.$store.getters.priceOfCart){
                 return this.$store.getters.priceOfCart
-            }else{
-                return 0
-            }
+
         }
     },
     methods: {
