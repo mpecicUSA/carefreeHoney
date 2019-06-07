@@ -6,6 +6,7 @@
   >
   <v-btn router to="/findus" flat>Find Us</v-btn>
   <v-btn router to="/about" flat>About</v-btn>
+  <v-btn v-show="!this.$store.state.user.user_id" router to="/login" flat>Login</v-btn>
   <v-bottom-sheet v-modal="sheet">
   <!-- <v-btn router to="/contactus" flat>Contact</v-btn> -->
   <v-btn
