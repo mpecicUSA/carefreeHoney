@@ -52,12 +52,10 @@ repository for capstone proposals for PHX WDI cohort g104
 * Add product to cart
 * View Cart
 * Remove item from cart
+FUTURE Improvements
+* Subscription purchase 
 * Checkout -- via stripe
 * confirmation - client and business
 * Client login - Stretch 
-
-   View past purchases
-   
-   Save Card details, address, quick reorder feature
-* Subscription purchase - STRETCH 
-
+* View past purchases
+* Save Card details, address, quick reorder feature
